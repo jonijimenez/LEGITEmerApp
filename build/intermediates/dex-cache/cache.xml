@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/JoniMarie/Desktop/EmerApp-1/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/Users/JoniMarie/Desktop/EmerApp-1/app/build/intermediates/pre-dexed/debug/classes-961b3315668b1d623479034c1fdd0e5a53f5e19b.jar" />
+    </item>
+    <item
+        jar="/Users/JoniMarie/Desktop/EmerApp-1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
+        <dex dex="/Users/JoniMarie/Desktop/EmerApp-1/app/build/intermediates/pre-dexed/debug/classes-55e8b6ae1819354b272c1faa4544b7ee73b1abfc.jar" />
+    </item>
+    <item
+        jar="/Applications/Android 2/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/Users/JoniMarie/Desktop/EmerApp-1/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-d458d7ed71c1bbc223b4d1ced8758cd69fac6e6c.jar" />
+    </item>
+    <item
+        jar="/Users/JoniMarie/Desktop/EmerApp-1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="2a7e47da654546f9457deb6132364f1bf33a1857">
+        <dex dex="/Users/JoniMarie/Desktop/EmerApp-1/app/build/intermediates/pre-dexed/debug/classes-b06acb083ca83f62edbfbb76551b073ba7a072a6.jar" />
+    </item>
+    <item
+        jar="/Users/JoniMarie/Desktop/EmerApp-1/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/Users/JoniMarie/Desktop/EmerApp-1/app/build/intermediates/pre-dexed/debug/classes-6c1726d9c24e4e98bfe50026efdee1cb52824a19.jar" />
+    </item>
+    <item
+        jar="/Users/JoniMarie/Desktop/EmerApp-1/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/Users/JoniMarie/Desktop/EmerApp-1/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-7e3623b9de7547e3b5f88206e18bcd95874527ec.jar" />
+    </item>
+    <item
+        jar="/Users/JoniMarie/Desktop/EmerApp-1/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="82825756edeeb3b56b15e73b2edd56e93da5a444">
+        <dex dex="/Users/JoniMarie/Desktop/EmerApp-1/app/build/intermediates/pre-dexed/debug/classes-ba6a7bf78c2048bf5ec1142e06a7429a810e73d6.jar" />
+    </item>
+
+</items>
