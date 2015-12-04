@@ -7,6 +7,8 @@
     <string name="Location">Location</string>
     <string name="Send">Send</string>
     <string name="MessageContent">Message Content</string>
-    <string name="PreContacts">Preselected Contacts</string>
+    <string name="PreContacts">General Contacts</string>
+    <string name="addContacts">Add</string>
+    <string name="resetContacts">Reset</string>
 
 </resources>

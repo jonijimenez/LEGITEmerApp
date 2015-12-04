@@ -4,6 +4,7 @@ import android.content.ContentResolver;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
+import android.provider.ContactsContract.Contacts;
 import android.provider.ContactsContract;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -11,7 +12,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.view.View;
-import android.provider.ContactsContract.Contacts;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 
@@ -19,6 +21,13 @@ public class MainActivity extends ActionBarActivity {
 
     static GPSTracker gps;
     private static final int CONTACT_PICKER_RESULT = 1001;
+
+    ImageButton rob, fire, emer, call;
+    EditText msgTxt;
+
+    //String for the message to be sent
+    String message = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +37,12 @@ public class MainActivity extends ActionBarActivity {
         Button location= (Button)findViewById(R.id.button);
         Button contacts=(Button)findViewById(R.id.button2);
 
+        //Buttons for emergencies
+        rob = (ImageButton)findViewById(R.id.imageButton);
+        fire = (ImageButton)findViewById(R.id.imageButton2);
+        emer = (ImageButton)findViewById(R.id.imageButton3);
+        call = (ImageButton)findViewById(R.id.imageButton4);
+        msgTxt = (EditText)findViewById(R.id.editText);
 
         location.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,50 +52,56 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
-        contacts.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
-                Intent contactPickerIntent = new Intent(Intent.ACTION_PICK,
-                        Contacts.CONTENT_URI);
-                startActivityForResult(contactPickerIntent, CONTACT_PICKER_RESULT);
+        //Button for the general contacts
+        contacts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, GenContacts.class);
+                i.putExtra("Header","General Contacts");
+                startActivity(i);
+
             }
         });
 
+
+
+        //Listener for emergency buttons
+        rob.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                message = "Emergency: Robbery\n";
+                sendMessage(message);
+            }
+        });
+        fire.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                message = "Emergency: Fire\n";
+                sendMessage(message);
+            }
+        });
+        emer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                message = "Emergency: Hijacking\n";
+                sendMessage(message);
+            }
+        });
+        call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                message = "Emergency: Rape\n";
+                sendMessage(message);
+            }
+        });
     }
 
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        ContentResolver cr = getContentResolver();
-        String name = "", phone = "";
-        if (resultCode == RESULT_OK) {
-            switch (requestCode) {
-                case CONTACT_PICKER_RESULT:
-                    // handle contact results
-                    Uri contactData = data.getData();
-                    Cursor c =  managedQuery(contactData, null, null, null, null);
-                    if (c.moveToFirst()) {
-                        name = c.getString(c.getColumnIndexOrThrow(ContactsContract.Contacts.DISPLAY_NAME));
-                        String id = c.getString(c.getColumnIndex(ContactsContract.Contacts._ID));
+    public void sendMessage(String msg){
+        msg = msg + "Location: \n" +
+                    "Sent to: \n" +
+                    "Sender: ";
 
-                        Cursor pCur = cr.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null,
-                                ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?",
-                                new String[]{id}, null);
-                        while (pCur.moveToNext()) {
-                            phone = pCur.getString(
-                                    pCur.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-                            Toast toast = Toast.makeText(this, name + " -> " + phone, Toast.LENGTH_SHORT);
-                            toast.show();
-                        }
-                        pCur.close();
-                    }
-                    Toast toast = Toast.makeText(this, name + " -> " + phone, Toast.LENGTH_SHORT);
-                    toast.show();
-                    break;
-            }
-
-        } else {
-            // gracefully handle failure
-            Toast toast = Toast.makeText(this, "Failure", Toast.LENGTH_SHORT);
-            toast.show();
-        }
+        msgTxt.setText(msg);
     }
 
     @Override
